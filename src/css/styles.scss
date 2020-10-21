@@ -1,0 +1,38 @@
+@import '../css//vars';
+@import '@servicenow/sass-kit/host';
+@import '../tinymce/skin/skin.min.css';
+@import '../tinymce/skin/content.min.css';
+
+:host {
+	display: block;
+	width: 100%;
+
+	& > .sw-editor {
+		width: 100%;
+
+		& > .editor-inner {
+			width: 100%;
+
+			& > .inner-container {
+				width: 100%;
+
+				& > textarea {
+					visibility: hidden;
+				}
+
+				& > .mce-tinymce {
+					border: none;
+				}
+			}
+		}
+
+		.mce-ico.mce-i-none {
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+
+		.mce-toolbar-grp {
+			padding: 5px 0;
+		}
+	}
+}

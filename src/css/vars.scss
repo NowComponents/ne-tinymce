@@ -1,0 +1,187 @@
+$pageWidth: 595pt;
+$pageHeight: 842pt;
+
+$itemHeight: 40px;
+$headerHeight: 40px;
+$base-shadow: 0 1px 15px 1px rgba(113, 106, 202, .08);
+
+$swBackground: #f7f8fa;
+$swDarkBlue: #212a43;
+$swLightBlue: #63b5e5;
+$swBrightRed: #e25733;
+$swBrightYellow: #f9c513;
+$swBrightOrange: #fc8a3d;
+$swBrightGreen: #6edb8f;
+$swBrightPurple: #5c71f0;
+$swHighlightBlue: mix($swLightBlue, white, 5);
+$swHighlightRed: mix($swBrightRed, white, 7);
+$swHighlightGreen: mix($swBrightGreen, white, 10);
+$swHighlightPurple: mix($swBrightPurple, white, 10);
+$swHighlightGray: #e8eaec;
+$swLowlightGray: #e0e3ea;
+$swLowlightGreen: mix(black, $swBrightGreen, 25);
+$swDarkGray: #788090;
+
+@function top-shadow ($depth) {
+    $primary-offset: nth(.5 1.5 3 10 14 19, $depth) * 1px;
+    $blur: nth(.5 1.5 3 10 14 19, $depth) * 4px;
+    $color: rgba(black, nth(.06 .12 .16 .19 .25 .30, $depth));
+
+    @return 0 $primary-offset $blur $color;
+}
+
+@function bottom-shadow ($depth) {
+    $primary-offset: nth(.5 1.5 3 6 10 15, $depth) * 1px;
+    $blur: nth(.5 1 3 3 5 6, $depth) * 4px;
+    $color: rgba(black, nth(.12 .24 .23 .23 .22 .22, $depth));
+
+    @return 0 $primary-offset $blur $color;
+}
+
+@mixin preset-shadow ($depth, $inset: false) {
+    @if $depth < 1 {
+        box-shadow: none;
+    }
+
+    @else if $depth>6 {
+        @if $inset == true {
+            box-shadow: inset 0 25px 50px -12px rgba(0, 0, 0, .25);
+        } @else {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, .25);
+        }
+    }
+
+    @else {
+        @if $inset == true {
+            box-shadow: inset bottom-shadow($depth), inset top-shadow($depth);
+        } @else {
+            box-shadow: bottom-shadow($depth), top-shadow($depth);
+        }
+    }
+}
+
+@mixin label-theme($name, $color: green) {
+    &.#{$name} {
+        border-color: $color;
+    }
+}
+
+@mixin after-accent($left: false, $useActive: true, $bg: $swDarkBlue, $offset: 3px, $inset: 3px, $size: 3px) {
+	position: relative;
+
+	&:after {
+		content: '';
+		position: absolute;
+		border-radius: 2px;
+		background: $bg;
+		pointer-events: none;
+		background-color: $bg;
+		-webkit-transform-origin: center center;
+		transform-origin: center center;
+		-webkit-transition: -webkit-transform;
+		-webkit-transition-duration: 0.25s;
+		transition: transform;
+		transition-duration: 0.25s;
+	}
+
+	@if $left==true {
+		&:after {
+			top: $inset;
+			bottom: $inset;
+			left: $offset;
+			width: $size;
+			-webkit-transform: scale3d(1, 0, 1);
+			transform: scale3d(1, 0, 1);
+		}
+
+		&:hover {
+			&:after {
+				-webkit-transform: none;
+				transform: none;
+			}
+		}
+
+		@if $useActive==true {
+			&.active {
+				&:after {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+		}
+	} @else {
+		&:after {
+			left: $inset;
+			right: $inset;
+			bottom: $offset;
+			height: $size;
+			-webkit-transform: scale3d(0, 1, 1);
+			transform: scale3d(0, 1, 1);
+		}
+
+		&:hover {
+			&:after {
+				-webkit-transform: none;
+				transform: none;
+			}
+		}
+
+		@if $useActive==true {
+			&.active {
+				&:after {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+		}
+	}
+}
+
+@mixin background-hover ($bg: $swHighlightBlue, $after: false, $afterColor: $swLightBlue, $afterLeft: false, $afterActive: false, $useActive: false) {
+    transition: background 0.15s ease-in-out;
+
+    &:hover {
+        background: $bg;
+	}
+	
+	@if $useActive==true {
+		&.active {
+			background: $bg;
+		}
+	}
+
+    @if $after==true {
+        @include after-accent($afterLeft, $afterActive, $afterColor);
+    }
+}
+
+@mixin loading-shimmer ($color: white) {
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        background-image: linear-gradient(90deg,
+                rgba($color, 0) 0,
+                rgba($color, 0.2) 20%,
+                rgba($color, 0.5) 60%,
+                rgba($color, 0));
+        animation: shimmer 2s infinite;
+        content: '';
+    }
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+* {
+    box-sizing: border-box;
+}

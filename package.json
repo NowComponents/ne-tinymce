@@ -1,0 +1,45 @@
+{
+  "name": "@nowcomponents/tinymce",
+  "version": "4.9.11-rc4",
+  "description": "A ServiceNow custom component for a custom tinymce 4 editor",
+  "main": "index.js",
+  "dependencies": {
+    "@servicenow/cli-archetype": "18.0.0",
+    "@servicenow/cli-component-archetype": "18.0.0",
+    "@servicenow/library-enhanced-element": "paris",
+    "@servicenow/library-translate": "paris",
+    "@servicenow/sass-kit": "paris",
+    "@servicenow/sass-theme": "paris",
+    "@servicenow/sass-utility": "paris",
+    "@servicenow/tool-enhanced-component-archetype": "paris",
+    "@servicenow/ui-core": "paris",
+    "@servicenow/ui-renderer-snabbdom": "paris",
+    "@servicenow/ui-testing-helpers": "paris",
+    "tinymce": "^4.9.11"
+  },
+  "devDependencies": {
+    "@servicenow/cli-archetype-dev": "18.0.0",
+    "@servicenow/cli-component-archetype-dev": "18.0.0",
+    "@servicenow/library-enhanced-test": "paris",
+    "@servicenow/tool-enhanced-component-archetype-dev": "paris",
+    "builder": "4.0.0"
+  },
+  "scripts": {
+    "test": "builder run test:functional"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nowcomponents/ne-tinymce.git"
+  },
+  "keywords": [
+    "component",
+    "ServiceNow",
+    "ne-tinymce"
+  ],
+  "author": "James Freund",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nowcomponents/ne-tinymce/issues"
+  },
+  "homepage": "https://github.com/nowcomponents/ne-tinymce#readme"
+}
