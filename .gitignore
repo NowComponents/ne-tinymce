@@ -18,3 +18,4 @@ coverage
 /target/
 !/dist/scripts/sn-component-custom-tinymce/skins/sn-editor/
 /dist/@saleswon/
+!/demo-preview/

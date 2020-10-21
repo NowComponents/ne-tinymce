@@ -1,0 +1,16 @@
+@function p($customProperty) {
+	$basekey: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+	$targetkey: 'K73dDGhN4YbH5yec6RxQanowLIFMql0BE2igrkJptPf8AVUjTmvXSZ1zWs9uOC';
+	$result: '';
+	@for $i from 1 through str-length($customProperty) {
+		$char: str-slice($customProperty, $i, $i);
+		$idx: str-index($basekey, $char);
+		@if $idx != null {
+			$newchar: str-slice($targetkey, $idx, $idx);
+			$result: $result + $newchar;
+		} @else {
+			$result: $result + $char;
+		}
+	}
+	@return unquote($result);
+}

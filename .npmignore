@@ -25,3 +25,4 @@ node_tmp
 /test/
 !/dist/scripts/
 /dist/@saleswon/
+demo-preview

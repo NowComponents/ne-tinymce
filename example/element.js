@@ -16,5 +16,5 @@ el.style.color = '#717171';
 document.body.appendChild(el);
 
 el.innerHTML = `
-<ne-tinymce />
+<ne-tinymce style="max-width: 1200px;" />
 `;

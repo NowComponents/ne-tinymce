@@ -1,0 +1,67 @@
+// ServiceNow Now Design System
+
+// Theme / Typography
+
+@font-face {
+	font-style: normal;
+	font-weight: 300; // 300 light
+	font-family: 'Source Sans Pro';
+	src: local('Source Sans Pro Light'), local('SourceSansPro-Light'),
+		url('type/source-sans-pro-v13-latin-300.woff2') format('woff2'),
+		url('type/source-sans-pro-v13-latin-300.woff') format('woff');
+}
+
+@font-face {
+	font-style: normal;
+	font-weight: normal; // 400 regular
+	font-family: 'Source Sans Pro';
+	src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'),
+		url('type/source-sans-pro-v13-latin-regular.woff2') format('woff2'),
+		url('type/source-sans-pro-v13-latin-regular.woff') format('woff');
+}
+
+@font-face {
+	font-style: italic;
+	font-weight: normal; // 400 regular italic
+	font-family: 'Source Sans Pro';
+	src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'),
+		url('type/source-sans-pro-v13-latin-italic.woff2') format('woff2'),
+		url('type/source-sans-pro-v13-latin-italic.woff') format('woff');
+}
+
+@font-face {
+	font-style: normal;
+	font-weight: 600; // semibold
+	font-family: 'Source Sans Pro';
+	src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'),
+		url('type/source-sans-pro-v13-latin-600.woff2') format('woff2'),
+		url('type/source-sans-pro-v13-latin-600.woff') format('woff');
+}
+
+@font-face {
+	font-style: italic;
+	font-weight: 600; // semibold italic
+	font-family: 'Source Sans Pro';
+	src: local('Source Sans Pro SemiBold Italic'),
+		local('SourceSansPro-SemiBoldItalic'),
+		url('type/source-sans-pro-v13-latin-600italic.woff2') format('woff2'),
+		url('type/source-sans-pro-v13-latin-600italic.woff') format('woff');
+}
+
+@font-face {
+	font-style: normal;
+	font-weight: bold; // 700 bold
+	font-family: 'Source Sans Pro';
+	src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'),
+		url('type/source-sans-pro-v13-latin-700.woff2') format('woff2'),
+		url('type/source-sans-pro-v13-latin-700.woff') format('woff');
+}
+
+@font-face {
+	font-style: italic;
+	font-weight: bold; // 700 bold italic
+	font-family: 'Source Sans Pro';
+	src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'),
+		url('type/source-sans-pro-v13-latin-700italic.woff2') format('woff2'),
+		url('type/source-sans-pro-v13-latin-700italic.woff') format('woff');
+}
