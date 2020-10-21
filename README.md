@@ -3,7 +3,7 @@ A Now Experience TinyMCE editor component
 
 ## Component Preview
 
-![preview](.\demo-preview\preview.jpg)
+![preview](demo-preview/preview.jpg)
 
 
 
