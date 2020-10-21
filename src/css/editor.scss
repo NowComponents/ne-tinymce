@@ -1,0 +1,50 @@
+@import './vars';
+
+html {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    box-shadow: inset $base-shadow;
+    min-height: 100%;
+
+    body {
+        //padding: 60px 20px !important;
+        margin: 0;
+        //padding-top: attr(data-top px);
+        line-height: 1.6em;
+        color: #717171;
+        max-width: 800px;
+        width: 100%;
+        position: relative;
+
+        &.reduced-padding {
+            padding: 20px !important;
+
+            p,
+            ol,
+            ul,
+            table {
+                margin-bottom: 10px;
+            }
+        }
+    
+        p,
+        ol,
+        ul,
+        table {
+            margin-bottom: 30px;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    
+        .agreement-mark {
+            background: $swHighlightPurple;
+            color: $swBrightPurple;
+            padding: 5px 4px;
+            border-radius: 4px;
+            margin: 0 2px;
+        }
+    }
+}

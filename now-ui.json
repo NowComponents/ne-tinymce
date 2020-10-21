@@ -1,0 +1,8 @@
+{
+	"components": {
+		"ne-tinymce": {
+			"innerComponents": []
+		}
+	},
+	"scopeName": "ne_tinymce"
+}

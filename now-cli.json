@@ -1,0 +1,17 @@
+{
+  "build": {
+    "transpileToEs6": true
+  },
+  "development": {
+    "proxy": {
+      "proxies": ["/api"]
+    }
+  },
+  "styles": {
+      "themes": [{
+        "module": "@servicenow/sass-theme",
+        "main": ["theme.scss"],
+        "copyFiles": ["type/*", "*.scss"]
+      }]
+  }
+}
